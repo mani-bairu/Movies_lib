@@ -10,7 +10,7 @@ class MovieForm(forms.Form):
 )
     name = forms.CharField(label='Movie Name', max_length=100)
     protagonists=forms.CharField(label='Protagonists')
-    release_date = forms.DateField(label='Release Date')
+    release_date = forms.DateField(label='Release Date',widget=forms.DateInput(attrs={'type': 'date'}))
     status = forms.ChoiceField(label='Status', choices=status_choices)
     poster = forms.ImageField(label='Poster')
     trailer = forms.FileField(label='Trailer')

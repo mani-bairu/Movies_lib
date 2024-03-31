@@ -14,9 +14,17 @@
             padding: 10px; /* Add padding inside cells */
             border: 1px solid black; /* Example border */
         }
+        .container{
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+            
+        }
+       
     </style>
 </head>
 <body>
+<div class="container">
     <h1>Add Movie</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -56,6 +64,7 @@
         
     </table>
     <br>
+</div>
        
 
 </body>
