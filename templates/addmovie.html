@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Movie Form</title>
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 10px; /* Adjust spacing as needed */
+        }
+        th, td {
+            padding: 10px; /* Add padding inside cells */
+            border: 1px solid black; /* Example border */
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Movie</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form><br><br>
+
+    
+    <table>
+        <tr>
+            <th>movie rating</th>
+            <th>movie name</th>
+            <th>movie protagonists</th>
+            <th>release date</th>
+            <th>movie status</th>
+            <th>movie poster</th>
+            <th>movie trailer</th>
+            <th>Update</th>
+
+
+        </tr>
+   
+        {% for move in movie_data%}
+        <tr>
+            <td>{{move.rating}}</td>
+            <td>{{move.name}}</td>
+            <td>{{move.protagonists}}</td>
+            <td>{{move.release_date}}</td>
+            <td>{{move.status}}</td>
+            <td><img src="{{ move.poster }}" alt="movie poster" width="100px"></td>
+            <td><video width="220" height="140"controls><source src="{{move.trailer}}"></td></video>
+            <td><a href="/update_status/{{move.id}}"><button>Update</button></a></td>
+
+        </tr>
+        
+        {% endfor %}
+        
+    </table>
+    <br>
+       
+
+</body>
+</html>
+

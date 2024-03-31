@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update status</title>
+ 
+</head>
+<body>
+    <div class="container">
+        <h4>Update Movie Status</h4>
+   
+
+        <form method="post">
+            {% csrf_token %}
+    <label for="moviename">movie name:</label>
+    <input type="text" id="moviename" name="moviename" value="{{movie_data.name}}" disabled><br><br>
+
+    <label for="protagonists">protagonists:</label>
+    <input type="text" id="protagonists" name="protagonists" value="{{movie_data.protagonists}}" disabled><br><br>
+
+    <label for="release_date">movie release_date:</label>
+    <input type="date" id="release_date" name="release_date" value="{{movie_data.release_date}}" disabled ><br><br>
+
+    <label for="status">movie status:</label>
+    <select id="cars" name="status">
+        <!-- Options -->
+        <option value="{{movie_data.status}}" disabled selected>{{movie_data.status}}</option>
+        <option value="coming-up">coming-up</option>
+        <option value="starting">starting</option>
+        <option value="running">running</option>
+        <option value="finished">finished</option>
+    </select><br><br>
+
+    <label for="movie_poster">movie poster:</label>
+    <input type="text" id="movie_poster" name="movie_poster" value="{{movie_data.poster}}" disabled><br><br>
+
+    <label for="movie_trailer">movie trailer:</label>
+    <input type="text" id="movie_trailer" name="movie_trailer" value="{{movie_data.trailer}}" disabled><br><br>
+
+    <button type="submit"> Update</button>
+    </form><br>
+    <a href="/addmovie/"><button type="submit"> Back to movie details</button></a>
+    </div>
+
+   
+    
+</body>
+</html>
