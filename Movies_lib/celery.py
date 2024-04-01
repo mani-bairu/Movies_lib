@@ -19,7 +19,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'update-movie-rating': {
         'task': 'Movies_Apis.tasks.update_movie_rating',
-        'schedule': 30,  # Run every 5 minutes (300 seconds)
+        'schedule': 300,  # Run every 5 minutes (300 seconds)
     },
 }
 
