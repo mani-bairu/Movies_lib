@@ -19,6 +19,9 @@ Please follow below steps to setup evnvinormnet and run the project
 
 7. Run the Python Project
 
+8. =>Navigate to this URL: http://127.0.0.1:8000/addmovie/ to access movies and obtain the movie list according to the movie rating
+   =>You can access the update page by clicking the update button for the specified movie or 
+
 That's it! You've successfully cloned the Python project from the Git repository to your local machine and run it.
 
 
